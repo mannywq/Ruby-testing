@@ -34,18 +34,22 @@ end
 # (see 11b_cat_spec.rb for Cat assignment)
 
 describe Dog do
+  subject(:taro) { described_class.new('Taro', nil, 'Ash') }
   # Create a subject with your choice of dog name and optional breed/color.
 
   # Write a test using the second shared_example to test that dog responds to
   # talk ('WOOF!').
-  context '' do
+  context 'Responds to talk' do
+    include_examples 'shared method name'
   end
 
   # remove the 'x' before running this test
-  xit 'is not barking' do
+  it 'is not barking' do
+    expect(taro.barking?).to be false
   end
 
   # remove the 'x' before running this test
-  xit 'is sleeping' do
+  it 'is sleeping' do
+    expect(taro.sleeping?).to be true
   end
 end
